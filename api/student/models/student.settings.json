@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "name": "student",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "student_course": {
+      "collection": "course",
+      "via": "courses"
+    },
+    "student_classroom": {
+      "collection": "classroom",
+      "via": "classrooms",
+      "dominant": true
+    }
+  }
+}

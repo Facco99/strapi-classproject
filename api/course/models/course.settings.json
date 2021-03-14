@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "name": "course",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "classrooms": {
+      "collection": "classroom",
+      "via": "course_id"
+    },
+    "courses": {
+      "via": "student_course",
+      "collection": "student",
+      "dominant": true
+    }
+  }
+}
